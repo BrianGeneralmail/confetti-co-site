@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confetti &amp; Co. Paper Shop — Printable Joy for Every Celebration</title>
+<meta name="description" content="Fillable, printable party games and murder mystery kits you download instantly and fill in on your computer — no design software, no login, no waiting for shipping.">
+
+<!-- Domain: confettiandcopapershop.com -->
+<link rel="canonical" href="https://www.confettiandcopapershop.com/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / social share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Confetti & Co. Paper Shop">
+<meta property="og:title" content="Confetti & Co. Paper Shop — Printable Joy for Every Celebration">
+<meta property="og:description" content="Fillable, printable party games and murder mystery kits you download instantly and print at home.">
+<meta property="og:image" content="https://www.confettiandcopapershop.com/assets/img/shop-banner-big.png">
+<meta property="og:url" content="https://www.confettiandcopapershop.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured data so search engines understand this is a shop, not just a page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Confetti & Co. Paper Shop",
+  "description": "Printable, fillable party games and murder mystery dinner party kits, delivered as instant digital downloads.",
+  "url": "https://www.confettiandcopapershop.com/",
+  "logo": "https://www.confettiandcopapershop.com/assets/img/shop-icon.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Grand Rapids",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://confetticopapershop.etsy.com"
+  ]
+}
+</script>
+
+<style>
+  /* ============ BRAND FONTS (self-hosted, exact Confetti & Co. kit) ============ */
+  @font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("assets/fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("assets/fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("assets/fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Sacramento";src:url("assets/fonts/Sacramento-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+
+  /* ============ TOKENS — exact Confetti & Co. palette ============ */
+  :root{
+    --cream:#FBF4E9;
+    --ink:#3E3A34;
+    --terracotta:#E17B54;
+    --sage:#7E9B76;
+    --marigold:#E0A93B;
+    --dusty:#6E93A6;
+    --blush:#EBC7BE;
+    --ink-15: rgba(62,58,52,.15);
+    --ink-08: rgba(62,58,52,.08);
+    --max: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Poppins",sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:"Playfair Display",serif;margin:0;font-weight:600;}
+  .script{font-family:"Sacramento",cursive;font-weight:400;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .eyebrow-label{font-size:.78rem;letter-spacing:.02em;color:var(--terracotta);font-weight:600;}
+  .btn{
+    display:inline-block;
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    padding:14px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--terracotta);color:var(--cream);}
+  .btn-primary:hover{background:#cf6a44;}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink-15);}
+  .btn-outline:hover{border-color:var(--ink);}
+
+  /* perforated / ticket-stub divider — a nod to "paper shop" die-cut edges */
+  .perf{
+    height:14px;
+    background-image: radial-gradient(circle, var(--cream) 3.5px, transparent 3.6px);
+    background-size: 22px 14px;
+    background-position: center;
+    background-color: var(--ink-08);
+  }
+
+  /* ============ NAV ============ */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--ink-15);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .nav-brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink);}
+  .nav-brand img{width:42px;height:42px;border-radius:50%;}
+  .nav-brand span{font-family:"Playfair Display",serif; font-size:1.25rem; font-weight:600;}
+  nav.nav-links{display:flex; align-items:center; gap:28px;}
+  nav.nav-links a{font-size:.92rem; font-weight:500; text-decoration:none; color:var(--ink);}
+  nav.nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{font-size:.85rem !important; padding:10px 20px !important;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    nav.nav-links{
+      position:fixed; inset:64px 0 0 0; background:var(--cream);
+      flex-direction:column; padding:32px 28px; gap:22px;
+      transform:translateX(100%); transition:transform .2s ease;
+    }
+    nav.nav-links.open{transform:translateX(0);}
+    .nav-toggle{
+      display:block; background:none; border:none; cursor:pointer;
+      font-size:1.6rem; color:var(--ink); line-height:1;
+    }
+  }
+
+  /* ============ HERO ============ */
+  .hero-banner{width:100%; height:auto; display:block;}
+  .hero-cta{
+    text-align:center;
+    padding:36px 28px 56px;
+  }
+  .hero-cta p{
+    max-width:560px; margin:0 auto 26px; color:var(--ink); opacity:.85;
+  }
+  .hero-buttons{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+  /* ============ ABOUT ============ */
+  .about{padding:64px 0; }
+  .about-inner{display:grid; grid-template-columns:1fr 1.3fr; gap:50px; align-items:center;}
+  .about-portrait{
+    background:var(--blush); border-radius:4px; aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .about-portrait img{width:70%;}
+  .about h2{font-size:1.9rem; margin-bottom:16px;}
+  .about p{margin:0 0 16px; opacity:.9;}
+  @media (max-width:800px){.about-inner{grid-template-columns:1fr;} .about-portrait{max-width:220px; margin:0 auto;}}
+
+  /* ============ FAQ ============ */
+  .faq{padding:20px 0 70px;}
+  .faq h2{font-size:1.9rem; margin-bottom:30px;}
+  .faq details{
+    border-top:1px solid var(--ink-15); padding:18px 0;
+  }
+  .faq details:last-child{border-bottom:1px solid var(--ink-15);}
+  .faq summary{
+    cursor:pointer; font-weight:600; font-family:"Poppins",sans-serif;
+    list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+"; font-family:"Playfair Display",serif; font-size:1.3rem; color:var(--terracotta); flex:none;}
+  .faq details[open] summary::after{content:"–";}
+  .faq p{margin:12px 0 0; opacity:.85; font-size:.95rem; max-width:640px;}
+
+  /* ============ HOW IT WORKS ============ */
+  .how{padding:70px 0 60px;}
+  .how h2{font-size:2rem; text-align:center; margin-bottom:10px;}
+  .how .sub{text-align:center; max-width:520px; margin:0 auto 46px; opacity:.8;}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  .step{text-align:left;}
+  .step .num{
+    font-family:"Playfair Display",serif; font-style:italic; font-size:2.4rem;
+    color:var(--terracotta); display:block; margin-bottom:8px;
+  }
+  .step h3{font-size:1.15rem; margin-bottom:8px; font-weight:600;}
+  .step p{margin:0; font-size:.95rem; opacity:.85;}
+  @media (max-width:760px){.steps{grid-template-columns:1fr; gap:30px;}}
+
+  /* ============ SHOP BY OCCASION ============ */
+  .occasions{padding:60px 0 70px;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:20px; margin-bottom:34px; flex-wrap:wrap;}
+  .section-head h2{font-size:2rem;}
+  .section-head a{font-size:.9rem; font-weight:600; color:var(--terracotta); text-decoration:none; white-space:nowrap;}
+
+  .occ-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-template-rows:150px 150px;
+    gap:18px;
+  }
+  .occ-card{
+    position:relative;
+    border-radius:4px;
+    padding:20px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    text-decoration:none;
+    color:var(--cream);
+    overflow:hidden;
+    border:1px solid var(--ink-15);
+  }
+  .occ-card h3{font-size:1.15rem; color:inherit; font-weight:600; line-height:1.15;}
+  .occ-card span.tag{font-size:.78rem; opacity:.9; display:block; margin-top:4px;}
+  .occ-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.28));
+  }
+  .occ-card h3, .occ-card span.tag{position:relative; z-index:1;}
+
+  .occ-1{grid-column:1 / span 3; grid-row:1; background:var(--marigold); color:var(--ink);}
+  .occ-2{grid-column:4 / span 3; grid-row:1; background:var(--blush); color:var(--ink);}
+  .occ-3{grid-column:1 / span 2; grid-row:2; background:var(--dusty);}
+  .occ-4{grid-column:3 / span 2; grid-row:2; background:var(--sage);}
+  .occ-5{grid-column:5 / span 2; grid-row:1 / span 2; background:var(--terracotta);}
+  .occ-6{grid-column:1 / span 6; grid-row:3; background:var(--ink); color:var(--cream); min-height:110px;}
+
+  @media (max-width:900px){
+    .occ-grid{grid-template-columns:repeat(2,1fr); grid-template-rows:auto;}
+    .occ-1,.occ-2,.occ-3,.occ-4,.occ-5,.occ-6{grid-column:auto; grid-row:auto; min-height:150px;}
+  }
+
+  /* ============ FEATURED PRODUCTS ============ */
+  .featured{padding:20px 0 70px;}
+  .flagship{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border:1px solid var(--ink-15); border-radius:4px; overflow:hidden;
+    margin-bottom:40px;
+  }
+  .flagship-art{
+    background:var(--ink);
+    color:var(--cream);
+    padding:48px 40px;
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative;
+  }
+  .flagship-art .badge{
+    display:inline-block; background:var(--terracotta); color:var(--cream);
+    font-size:.75rem; font-weight:600; padding:6px 14px; border-radius:999px;
+    margin-bottom:18px; width:fit-content;
+  }
+  .flagship-art h3{color:var(--cream); font-size:1.8rem; margin-bottom:10px;}
+  .flagship-art p.script{color:var(--blush); font-size:1.5rem; margin-bottom:16px;}
+  .flagship-copy{padding:48px 40px; display:flex; flex-direction:column; justify-content:center;}
+  .flagship-copy p{opacity:.85; margin-bottom:20px;}
+  .flagship-copy .price{font-family:"Playfair Display",serif; font-size:1.6rem; color:var(--terracotta); margin-bottom:20px;}
+  @media (max-width:760px){.flagship{grid-template-columns:1fr;}}
+
+  .product-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+  }
+  .product-card{
+    border:1px solid var(--ink-15); border-radius:4px; padding:22px;
+    background:var(--cream);
+  }
+  .product-card .dot{width:10px;height:10px;border-radius:50%; margin-bottom:14px;}
+  .product-card h4{font-family:"Playfair Display",serif; font-size:1.05rem; font-weight:600; margin-bottom:8px; line-height:1.25;}
+  .product-card p{font-size:.85rem; opacity:.8; margin:0 0 12px;}
+  .product-card .price{font-weight:600; font-size:.9rem; color:var(--terracotta);}
+  @media (max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.product-grid{grid-template-columns:1fr;}}
+
+  /* ============ BLOG TEASER ============ */
+  .blog{padding:60px 0 70px;}
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .blog-card{text-decoration:none; color:var(--ink); display:block;}
+  .blog-card .thumb{
+    height:150px; border-radius:4px; margin-bottom:16px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Playfair Display",serif; font-style:italic; font-size:1.1rem; text-align:center; padding:20px;
+  }
+  .blog-card h4{font-size:1.05rem; margin-bottom:8px; line-height:1.3;}
+  .blog-card p{font-size:.85rem; opacity:.75; margin:0;}
+  @media (max-width:760px){.blog-grid{grid-template-columns:1fr;}}
+
+  /* ============ EMAIL CAPTURE ============ */
+  .capture{
+    background:var(--terracotta); color:var(--cream);
+    padding:64px 0; text-align:center;
+  }
+  .capture h2{color:var(--cream); font-size:1.9rem; margin-bottom:14px;}
+  .capture p{opacity:.92; max-width:480px; margin:0 auto 28px;}
+  .capture-form{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; max-width:440px; margin:0 auto;}
+  .capture-form input{
+    flex:1; min-width:180px; padding:14px 18px; border-radius:999px; border:none;
+    font-family:"Poppins",sans-serif; font-size:.95rem;
+  }
+  .capture-form button{
+    background:var(--ink); color:var(--cream); border:none; padding:14px 26px;
+    border-radius:999px; font-family:"Poppins",sans-serif; font-weight:600; cursor:pointer;
+  }
+  .capture small{display:block; margin-top:16px; opacity:.8; font-size:.78rem;}
+
+  /* ============ FOOTER ============ */
+  footer{padding:50px 0 34px;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; margin-bottom:34px;}
+  .footer-brand{display:flex; align-items:center; gap:14px;}
+  .footer-brand img{width:52px;height:52px;border-radius:50%;}
+  .footer-brand .script{font-size:1.4rem; color:var(--terracotta);}
+  .footer-links{display:flex; gap:44px; flex-wrap:wrap;}
+  .footer-links h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; margin:0 0 12px; opacity:.6;}
+  .footer-links ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .footer-links a{text-decoration:none; font-size:.9rem;}
+  .footer-links a:hover{color:var(--terracotta);}
+  .footer-bottom{
+    border-top:1px solid var(--ink-15); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.8rem; opacity:.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">
+      <img src="assets/img/shop-icon.png" alt="Confetti & Co. logo">
+      <span>Confetti &amp; Co.</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#occasions">Shop by Occasion</a>
+      <a href="#featured">Featured</a>
+      <a href="#blog">Party Ideas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#subscribe">Free Printable</a>
+      <!-- REPLACE with your live Etsy shop URL -->
+      <a class="btn btn-primary nav-cta" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Shop on Etsy</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div id="top"></div>
+<img class="hero-banner" src="assets/img/shop-banner-big.png" alt="Confetti & Co. Paper Shop — printable joy for every celebration">
+
+<div class="hero-cta">
+  <p>Fillable, printable party games and murder mystery dinner parties you download in seconds, personalize on your screen, and print at home. No design software. No login. No waiting on the mail.</p>
+  <div class="hero-buttons">
+    <a class="btn btn-primary" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Shop the Full Collection</a>
+    <a class="btn btn-outline" href="#subscribe">Get a Free Printable</a>
+  </div>
+</div>
+
+<div class="perf"></div>
+
+<!-- ============ ABOUT (adapted from the shop's Etsy "About" bio) ============ -->
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div class="about-portrait">
+      <img src="assets/img/shop-icon.png" alt="Confetti & Co. Paper Shop badge logo">
+    </div>
+    <div>
+      <span class="eyebrow-label">About the shop</span>
+      <h2>Printable joy, made by one person who really likes a good party</h2>
+      <p>Welcome to Confetti &amp; Co. Paper Shop. I create ready-to-print games, signs, and party printables that make hosting easier and a little more fun. Every design downloads instantly, opens right in your browser or free Adobe Acrobat Reader, and is ready to print at home — no shipping, no waiting, just add it to the party.</p>
+      <p>Whether you're throwing a bridal shower, a baby shower, a bachelorette weekend, a birthday, or a holiday get-together, you'll find a bundle here that does the heavy lifting so you can enjoy the day. A few things I care about: clean, cohesive designs; instant delivery; and printables that feel like a gift the host gives themselves.</p>
+      <p>Questions or a custom request? <a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener" style="color:var(--terracotta); font-weight:600;">Send me a message on Etsy</a> anytime — I'd love to help make your celebration special.</p>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<!-- ============ HOW IT WORKS (genuine 3-step sequence) ============ -->
+<section class="how">
+  <div class="wrap">
+    <h2>From download to party in three steps</h2>
+    <p class="sub">Every listing is a fillable PDF — you type directly into it, no extra apps required.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>Buy &amp; download instantly</h3>
+        <p>Your PDF lands in your inbox the moment you check out on Etsy — ready before your coffee's cold.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>Fill it in with free Adobe Reader</h3>
+        <p>Type names, dates, and details right into the form fields. No Canva account, no design skills.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>Print at home &amp; host</h3>
+        <p>Print as many copies as your guest list needs, then let the party do the rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<!-- ============ SHOP BY OCCASION ============ -->
+<section class="occasions" id="occasions">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Shop by occasion</h2>
+      <a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">View full shop &rarr;</a>
+    </div>
+    <div class="occ-grid">
+      <a class="occ-card occ-1" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59374695" target="_blank" rel="noopener"><h3>Life Milestones</h3><span class="tag">Birthdays, retirement, graduation</span></a>
+      <a class="occ-card occ-2" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358516" target="_blank" rel="noopener"><h3>Wedding &amp; Romance</h3><span class="tag">Bridal showers, bachelorette, engagement</span></a>
+      <a class="occ-card occ-3" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358532" target="_blank" rel="noopener"><h3>Baby &amp; Gender Reveal</h3><span class="tag">Showers, reveals, planning kits</span></a>
+      <a class="occ-card occ-4" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59533453" target="_blank" rel="noopener"><h3>Kids &amp; Family</h3><span class="tag">Birthdays, escape rooms, road trips</span></a>
+      <a class="occ-card occ-5" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59654133" target="_blank" rel="noopener"><h3>Party Games Bundles</h3><span class="tag">Holidays, tailgates, office parties</span></a>
+      <a class="occ-card occ-6" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59637996" target="_blank" rel="noopener"><h3>Escape Room &amp; Murder Mystery</h3><span class="tag">Immersive dinner-party whodunits</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="featured" id="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Fan favorites right now</h2>
+    </div>
+
+    <!-- Flagship: XOXO, You're Dead — live listing with real Pinterest traction -->
+    <div class="flagship">
+      <div class="flagship-art">
+        <span class="badge">Shop favorite</span>
+        <p class="script">A Valentine's Day whodunit</p>
+        <h3>XOXO, You're Dead</h3>
+        <p style="opacity:.85; margin:0;">10 character dossiers &middot; 9 evidence cards &middot; full host solution</p>
+      </div>
+      <div class="flagship-copy">
+        <p>Legendary matchmaker Valentina Fontaine is poisoned at her own gala — moments before she can reveal one final secret. A complete 10-player murder mystery dinner party, fillable start to finish: assignment sheet, name tags, evidence, case notes, and a confession monologue for the host.</p>
+        <div class="price">$22.00</div>
+        <a class="btn btn-primary" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener" style="width:fit-content;">Get the Mystery</a>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="dot" style="background:var(--sage);"></div>
+        <h4>Operation Birthday Rescue</h4>
+        <p>A printable escape room for kids' birthdays, personalized with the birthday star's name.</p>
+        <div class="price">$17.00</div>
+      </div>
+      <div class="product-card">
+        <div class="dot" style="background:var(--dusty);"></div>
+        <h4>Gender Reveal Planning Kit</h4>
+        <p>9 fillable pages to plan the whole event, from guest list to reveal moment.</p>
+        <div class="price">$15.00</div>
+      </div>
+      <div class="product-card">
+        <div class="dot" style="background:var(--marigold);"></div>
+        <h4>Ultimate Party Games Bundle</h4>
+        <p>Trivia, would-you-rather, and charades for absolutely any occasion.</p>
+        <div class="price">$8.00</div>
+      </div>
+      <div class="product-card">
+        <div class="dot" style="background:var(--blush);"></div>
+        <h4>Bridal Shower Games Bundle</h4>
+        <p>20 printable boho-styled games your bridal party will actually enjoy.</p>
+        <div class="price">$10.99</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<!-- ============ BLOG / PARTY IDEAS TEASER ============ -->
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Party ideas &amp; how-tos</h2>
+    </div>
+    <div class="blog-grid">
+      <a class="blog-card" href="blog/host-a-murder-mystery-party.html">
+        <div class="thumb" style="background:var(--ink); color:var(--cream);">"XOXO, You're Dead"</div>
+        <h4>How to Host a Murder Mystery Dinner Party at Home</h4>
+        <p>Everything from casting guests to pulling off the reveal.</p>
+      </a>
+      <a class="blog-card" href="blog/baby-shower-games-people-actually-want-to-play.html">
+        <div class="thumb" style="background:var(--dusty); color:var(--cream);">Baby Shower</div>
+        <h4>5 Baby Shower Games People Actually Want to Play</h4>
+        <p>Skip the awkward icebreakers — these keep the room laughing.</p>
+      </a>
+      <a class="blog-card" href="blog/backyard-escape-room-kids-birthday.html">
+        <div class="thumb" style="background:var(--sage); color:var(--cream);">Kids' Birthday</div>
+        <h4>Planning a Backyard Escape Room for a Kid's Birthday</h4>
+        <p>Turn a birthday party into a mystery the whole group solves together.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ (adapted from the shop's Etsy "Quick Questions") ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Quick questions</h2>
+
+    <details open>
+      <summary>Do I need special software to fill these in?</summary>
+      <p>No — just free Adobe Acrobat Reader (Windows, Mac, iPhone, or Android). Open the PDF, click into the highlighted fields, and type. No design skills, no account, no app to buy.</p>
+    </details>
+
+    <details>
+      <summary>What if I don't have Acrobat installed?</summary>
+      <p>It's a free download from Adobe and takes under a minute to install — every order includes a direct link and a quick how-to guide.</p>
+    </details>
+
+    <details>
+      <summary>Can I still use it if I'd rather not type into fields?</summary>
+      <p>Yes — every game also prints blank so you can fill it in by hand.</p>
+    </details>
+
+    <details>
+      <summary>What do I actually receive?</summary>
+      <p>An instant digital download: the fillable PDF plus a short how-to guide. No physical item ships, so there's nothing to wait on.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ EMAIL CAPTURE ============ -->
+<section class="capture" id="subscribe">
+  <div class="wrap">
+    <h2>Get a free printable game</h2>
+    <p>Join the list for a free game on us, plus first access to new murder mysteries and seasonal bundles.</p>
+    <!-- Connected to Mailchimp. Kept: real action URL, EMAIL/FNAME fields, and the
+         hidden honeypot field (leave it untouched — it's anti-bot protection, not a
+         real field). Dropped: Mailchimp's default CSS/JS bundle and the LNAME field,
+         since neither was needed and both fought the site's own styling. -->
+    <form class="capture-form" action="https://mozmail.us1.list-manage.com/subscribe/post?u=77f782edab069ecd170712824&amp;id=86839ef3bf&amp;f_id=00e429e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <input type="text" name="FNAME" placeholder="First name">
+      <input type="email" name="EMAIL" placeholder="you@email.com" required>
+      <div aria-hidden="true" style="position:absolute; left:-5000px;">
+        <input type="text" name="b_77f782edab069ecd170712824_86839ef3bf" tabindex="-1" value="">
+      </div>
+      <button type="submit" name="subscribe" id="mc-embedded-subscribe">Send it to me</button>
+    </form>
+    <small>No spam — just party ideas, a few times a month.</small>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/shop-icon.png" alt="Confetti & Co. logo">
+        <div>
+          <div style="font-family:'Playfair Display',serif; font-weight:600; font-size:1.15rem;">Confetti &amp; Co.</div>
+          <div class="script" style="color:var(--terracotta);">printable joy for every celebration</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="#occasions">By Occasion</a></li>
+            <li><a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Full Etsy Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Follow</h5>
+          <ul>
+            <!-- REPLACE with your real profile URLs -->
+            <li><a href="https://pin.it/7urGrjDf2" target="_blank" rel="noopener">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Confetti &amp; Co. Paper Shop &middot; Grand Rapids, Michigan</span>
+      <span>Digital downloads only &middot; No refunds on delivered files</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
