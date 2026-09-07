@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Starter Kit — Confetti &amp; Co. Paper Shop</title>
+<meta name="description" content="Download your free Confetti & Co. Starter Kit — a fillable sample PDF plus how-to guide.">
+
+<!-- Not meant to rank on its own; keep it out of search results, but let it link back in. -->
+<link rel="canonical" href="https://www.confettiandcopapershop.com/download/">
+<meta name="robots" content="noindex, follow">
+
+<style>
+  /* ============ BRAND FONTS (self-hosted, exact Confetti & Co. kit) ============ */
+  @font-face{font-family:"Playfair Display";src:url("../assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("../assets/fonts/PlayfairDisplay-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("../assets/fonts/PlayfairDisplay-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("../assets/fonts/PlayfairDisplay-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Playfair Display";src:url("../assets/fonts/PlayfairDisplay-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("../assets/fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("../assets/fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Poppins";src:url("../assets/fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Sacramento";src:url("../assets/fonts/Sacramento-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+
+  /* ============ TOKENS — exact Confetti & Co. palette ============ */
+  :root{
+    --cream:#FBF4E9;
+    --ink:#3E3A34;
+    --terracotta:#E17B54;
+    --sage:#7E9B76;
+    --marigold:#E0A93B;
+    --dusty:#6E93A6;
+    --blush:#EBC7BE;
+    --ink-15: rgba(62,58,52,.15);
+    --ink-08: rgba(62,58,52,.08);
+    --max: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Poppins",sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:"Playfair Display",serif;margin:0;font-weight:600;}
+  .script{font-family:"Sacramento",cursive;font-weight:400;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .eyebrow-label{font-size:.78rem;letter-spacing:.02em;color:var(--terracotta);font-weight:600;}
+  .btn{
+    display:inline-block;
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    padding:14px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--terracotta);color:var(--cream);}
+  .btn-primary:hover{background:#cf6a44;}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink-15);}
+  .btn-outline:hover{border-color:var(--ink);}
+
+  .perf{
+    height:14px;
+    background-image: radial-gradient(circle, var(--cream) 3.5px, transparent 3.6px);
+    background-size: 22px 14px;
+    background-position: center;
+    background-color: var(--ink-08);
+  }
+
+  /* ============ NAV (same as homepage) ============ */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--ink-15);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .nav-brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink);}
+  .nav-brand img{width:42px;height:42px;border-radius:50%;}
+  .nav-brand span{font-family:"Playfair Display",serif; font-size:1.25rem; font-weight:600;}
+  nav.nav-links{display:flex; align-items:center; gap:28px;}
+  nav.nav-links a{font-size:.92rem; font-weight:500; text-decoration:none; color:var(--ink);}
+  nav.nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{font-size:.85rem !important; padding:10px 20px !important;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    nav.nav-links{
+      position:fixed; inset:64px 0 0 0; background:var(--cream);
+      flex-direction:column; padding:32px 28px; gap:22px;
+      transform:translateX(100%); transition:transform .2s ease;
+    }
+    nav.nav-links.open{transform:translateX(0);}
+    .nav-toggle{
+      display:block; background:none; border:none; cursor:pointer;
+      font-size:1.6rem; color:var(--ink); line-height:1;
+    }
+  }
+
+  /* ============ DELIVERY HERO ============ */
+  .delivery-hero{padding:70px 0 20px; text-align:center;}
+  .delivery-hero .script{font-size:1.6rem; color:var(--sage); display:block; margin-bottom:10px;}
+  .delivery-hero h1{font-size:2.3rem; margin-bottom:18px;}
+  .delivery-hero p{max-width:560px; margin:0 auto 34px; opacity:.85;}
+  .download-cards{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px;
+    max-width:760px; margin:0 auto;
+  }
+  .download-card{
+    border:1px solid var(--ink-15); border-radius:4px; padding:30px 26px;
+    background:var(--cream); text-align:left;
+  }
+  .download-card .kicker{font-size:.78rem; letter-spacing:.02em; color:var(--terracotta); font-weight:600; display:block; margin-bottom:10px;}
+  .download-card h3{font-size:1.2rem; margin-bottom:10px;}
+  .download-card p{font-size:.9rem; opacity:.8; margin:0 0 20px;}
+  @media (max-width:600px){.download-cards{grid-template-columns:1fr;}}
+
+  /* ============ MINI HOW-IT-WORKS ============ */
+  .mini-how{padding:56px 0;}
+  .mini-how h2{font-size:1.6rem; text-align:center; margin-bottom:36px;}
+  .mini-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:30px; max-width:900px; margin:0 auto;}
+  .mini-step{text-align:left;}
+  .mini-step .num{
+    font-family:"Playfair Display",serif; font-style:italic; font-size:2rem;
+    color:var(--terracotta); display:block; margin-bottom:6px;
+  }
+  .mini-step h3{font-size:1.02rem; margin-bottom:6px;}
+  .mini-step p{margin:0; font-size:.88rem; opacity:.85;}
+  @media (max-width:760px){.mini-steps{grid-template-columns:1fr; gap:24px;}}
+
+  /* ============ DISCOUNT CALLOUT (reuses the .capture treatment) ============ */
+  .capture{
+    background:var(--terracotta); color:var(--cream);
+    padding:54px 0; text-align:center;
+  }
+  .capture h2{color:var(--cream); font-size:1.7rem; margin-bottom:10px;}
+  .capture .code{
+    display:inline-block; font-family:"Playfair Display",serif; font-weight:700;
+    font-size:1.5rem; letter-spacing:.04em; background:var(--cream); color:var(--terracotta);
+    padding:10px 26px; border-radius:999px; margin:12px 0 16px;
+  }
+  .capture p.fine{opacity:.9; max-width:440px; margin:0 auto; font-size:.88rem;}
+
+  /* ============ WHAT'S NEXT ============ */
+  .whats-next{padding:60px 0 70px; text-align:center;}
+  .whats-next h2{font-size:1.7rem; margin-bottom:14px;}
+  .whats-next p{max-width:480px; margin:0 auto 30px; opacity:.85;}
+
+  /* ============ FOOTER (same as homepage) ============ */
+  footer{padding:50px 0 34px;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; margin-bottom:34px;}
+  .footer-brand{display:flex; align-items:center; gap:14px;}
+  .footer-brand img{width:52px;height:52px;border-radius:50%;}
+  .footer-brand .script{font-size:1.4rem; color:var(--terracotta);}
+  .footer-links{display:flex; gap:44px; flex-wrap:wrap;}
+  .footer-links h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; margin:0 0 12px; opacity:.6;}
+  .footer-links ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .footer-links a{text-decoration:none; font-size:.9rem;}
+  .footer-links a:hover{color:var(--terracotta);}
+  .footer-bottom{
+    border-top:1px solid var(--ink-15); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.8rem; opacity:.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html">
+      <img src="../assets/img/shop-icon.png" alt="Confetti & Co. logo">
+      <span>Confetti &amp; Co.</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#occasions">Shop by Occasion</a>
+      <a href="../index.html#featured">Featured</a>
+      <a href="../index.html#blog">Party Ideas</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a class="btn btn-primary nav-cta" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Shop on Etsy</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ DELIVERY HERO ============ -->
+<section class="delivery-hero">
+  <div class="wrap">
+    <span class="script">a little sample of the party</span>
+    <h1>Your Confetti &amp; Co. Starter Kit is ready</h1>
+    <p>Four mini activities pulled from four corners of the shop, so you can try the format before you commit to a full night of games. Grab both files below.</p>
+
+    <div class="download-cards">
+      <div class="download-card">
+        <span class="kicker">The main event</span>
+        <h3>The Starter Kit</h3>
+        <p>5-page fillable PDF — persona generator, warm-up puzzle, party day checklist, and a map of the whole shop.</p>
+        <a class="btn btn-primary" href="files/confetti-co-starter-kit.pdf" download>Download the Starter Kit</a>
+      </div>
+      <div class="download-card">
+        <span class="kicker">Quick reference</span>
+        <h3>How-To Guide</h3>
+        <p>A 2-page guide to opening and filling in your PDF with free Adobe Acrobat Reader.</p>
+        <a class="btn btn-outline" href="files/confetti-co-starter-kit-how-to.pdf" download>Download the How-To Guide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf"></div>
+
+<!-- ============ MINI HOW-IT-WORKS ============ -->
+<section class="mini-how">
+  <div class="wrap">
+    <h2>Getting started takes about a minute</h2>
+    <div class="mini-steps">
+      <div class="mini-step">
+        <span class="num">1</span>
+        <h3>Open in free Adobe Acrobat Reader</h3>
+        <p>Desktop or mobile — some browser PDF viewers don't support fillable fields.</p>
+      </div>
+      <div class="mini-step">
+        <span class="num">2</span>
+        <h3>Click into the highlighted fields</h3>
+        <p>Type your details right on the page — no extra apps, no login.</p>
+      </div>
+      <div class="mini-step">
+        <span class="num">3</span>
+        <h3>Print, save, or share</h3>
+        <p>Print at home, at a local shop, or send the filled PDF digitally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCOUNT CALLOUT ============ -->
+<section class="capture">
+  <div class="wrap">
+    <h2>Thanks for signing up</h2>
+    <span class="code">WELCOME10</span>
+    <p class="fine">Use this code for 10% off your first purchase. Limit 2 redemptions, one per customer.</p>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEXT ============ -->
+<section class="whats-next">
+  <div class="wrap">
+    <h2>Loved the sample?</h2>
+    <p>The Starter Kit's last page maps all six sections of the shop — or just head straight over.</p>
+    <a class="btn btn-primary" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Shop the Full Collection</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/img/shop-icon.png" alt="Confetti & Co. logo">
+        <div>
+          <div style="font-family:'Playfair Display',serif; font-weight:600; font-size:1.15rem;">Confetti &amp; Co.</div>
+          <div class="script" style="color:var(--terracotta);">printable joy for every celebration</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="../index.html#occasions">By Occasion</a></li>
+            <li><a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Full Etsy Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Follow</h5>
+          <ul>
+            <li><a href="https://pin.it/7urGrjDf2" target="_blank" rel="noopener">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Confetti &amp; Co. Paper Shop &middot; Grand Rapids, Michigan</span>
+      <span>Digital downloads only &middot; No refunds on delivered files</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
