@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Domain: confettiandcopapershop.com
+Sitemap: https://www.confettiandcopapershop.com/sitemap.xml
