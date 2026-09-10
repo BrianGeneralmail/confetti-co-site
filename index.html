@@ -281,7 +281,8 @@
 
   /* ============ BLOG TEASER ============ */
   .blog{padding:60px 0 70px;}
-  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .blog-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
   .blog-card{text-decoration:none; color:var(--ink); display:block;}
   .blog-card .thumb{
     height:150px; border-radius:4px; margin-bottom:16px;
@@ -493,6 +494,11 @@
         <div class="thumb" style="background:var(--sage); color:var(--cream);">Kids' Birthday</div>
         <h4>Planning a Backyard Escape Room for a Kid's Birthday</h4>
         <p>Turn a birthday party into a mystery the whole group solves together.</p>
+      </a>
+      <a class="blog-card" href="blog/halloween-murder-mystery-dinner-party.html">
+        <div class="thumb" style="background:var(--terracotta); color:var(--cream);">"Haunted Hollow"</div>
+        <h4>How to Throw a Halloween Murder Mystery Dinner Party</h4>
+        <p>Costumes, casting, and pacing the evidence for a spooky-season whodunit.</p>
       </a>
     </div>
   </div>
