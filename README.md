@@ -1,5 +1,5 @@
 # Confetti & Co. — Website Mockup
- 
+  
 This is a static (no-database, no-server-code) marketing site built from your
 real brand kit: exact colors, Playfair Display/Sacramento/Poppins fonts, your
 logo, and your shop banner. It links out to Etsy rather than replicating
