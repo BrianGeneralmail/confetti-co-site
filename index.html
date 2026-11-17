@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (Google Tag Manager container GTM-5VGX4RQX → GA4 G-88L5MNETH3). Keep on every page, right after <head>. -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5VGX4RQX"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Confetti &amp; Co. Paper Shop — Printable Joy for Every Celebration</title>
-<meta name="description" content="Fillable, printable party games and murder mystery kits you download instantly and fill in on your computer — no design software, no login, no waiting for shipping.">
+<meta name="description" content="Printable party games and murder mystery dinner parties. Download instantly, type in your details, and print at home. No design software needed.">
 
 <!-- Domain: confettiandcopapershop.com -->
 <link rel="canonical" href="https://confettiandcopapershop.com/">
@@ -35,10 +37,12 @@
     "addressCountry": "US"
   },
   "sameAs": [
-    "https://confetticopapershop.etsy.com"
+    "https://confetticopapershop.etsy.com",
+    "https://www.pinterest.com/confetticopapershop/"
   ]
 }
 </script>
+<script src="assets/js/site.js"></script>
 
 <style>
   /* ============ BRAND FONTS (self-hosted, exact Confetti & Co. kit) ============ */
@@ -156,9 +160,18 @@
     text-align:center;
     padding:36px 28px 56px;
   }
+  .hero-cta h1{
+    font-size:clamp(1.6rem, 3.2vw, 2.3rem); line-height:1.2; max-width:720px; margin:0 auto 14px;
+  }
   .hero-cta p{
     max-width:560px; margin:0 auto 26px; color:var(--ink); opacity:.85;
   }
+  .season-note{
+    display:inline-block; margin:0 auto 18px; font-size:.82rem; font-weight:600;
+    color:var(--terracotta); background:rgba(225,123,84,.1); padding:6px 16px; border-radius:999px;
+    text-decoration:none;
+  }
+  .season-note:hover{background:rgba(225,123,84,.18);}
   .hero-buttons{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
 
   /* ============ ABOUT ============ */
@@ -227,19 +240,26 @@
   }
   .occ-card h3{font-size:1.15rem; color:inherit; font-weight:600; line-height:1.15;}
   .occ-card span.tag{font-size:.78rem; opacity:.9; display:block; margin-top:4px;}
+  /* product photo fills the tile; color stays underneath as a fallback */
+  .occ-card img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    transition:transform .35s ease;
+  }
+  .occ-card:hover img{transform:scale(1.04);}
   .occ-card::after{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.28));
+    background:linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(30,26,22,.86));
   }
-  .occ-card h3, .occ-card span.tag{position:relative; z-index:1;}
+  .occ-card h3, .occ-card span.tag{position:relative; z-index:1; color:var(--cream);}
+  .occ-card span.tag::after{content:" →"; opacity:.9;}
 
-  .occ-1{background:var(--marigold); color:var(--ink);}
-  .occ-2{background:var(--blush); color:var(--ink);}
+  .occ-1{background:var(--marigold);}
+  .occ-2{background:var(--blush);}
   .occ-3{background:var(--dusty);}
   .occ-4{background:var(--sage);}
   .occ-5{background:var(--terracotta);}
-  .occ-6{background:var(--ink); color:var(--cream);}
+  .occ-6{background:var(--ink);}
 
   @media (max-width:900px){
     .occ-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;}
@@ -257,9 +277,15 @@
     background:var(--ink);
     color:var(--cream);
     padding:48px 40px;
-    display:flex; flex-direction:column; justify-content:center;
-    position:relative;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    position:relative; min-height:460px; overflow:hidden;
   }
+  .flagship-art > img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;
+    transition:transform .35s ease;
+  }
+  .flagship-art:hover > img{transform:scale(1.03);}
+  .flagship-art > *:not(img){position:relative; z-index:1;}
   .flagship-art .badge{
     display:inline-block; background:var(--terracotta); color:var(--cream);
     font-size:.75rem; font-weight:600; padding:6px 14px; border-radius:999px;
@@ -276,15 +302,22 @@
     display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
   }
   .product-card{
-    border:1px solid var(--ink-15); border-radius:4px; padding:22px;
+    border:1px solid var(--ink-15); border-radius:4px; overflow:hidden;
     background:var(--cream);
   }
-  a.product-card{display:block; text-decoration:none; color:inherit; transition:transform .2s ease, box-shadow .2s ease;}
+  a.product-card{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .2s ease, box-shadow .2s ease;}
   a.product-card:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.08);}
-  .product-card .dot{width:10px;height:10px;border-radius:50%; margin-bottom:14px;}
-  .product-card h4{font-family:"Playfair Display",serif; font-size:1.05rem; font-weight:600; margin-bottom:8px; line-height:1.25;}
-  .product-card p{font-size:.85rem; opacity:.8; margin:0 0 12px;}
-  .product-card .price{font-weight:600; font-size:.9rem; color:var(--terracotta);}
+  .product-card .thumb{aspect-ratio:1/1; background:var(--blush); overflow:hidden;}
+  .product-card .thumb img{width:100%; height:100%; object-fit:cover; object-position:center 15%;}
+  .product-card .body{padding:18px 20px 20px; display:flex; flex-direction:column; flex:1;}
+  .product-card h4{font-family:"Playfair Display",serif; font-size:1.05rem; font-weight:600; margin:0 0 8px; line-height:1.25;}
+  .product-card p{font-size:.85rem; opacity:.8; margin:0 0 14px;}
+  .product-card .meta{margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  .product-card .price{font-weight:600; font-size:.95rem; color:var(--terracotta);}
+  .product-card .view{font-size:.8rem; font-weight:600; color:var(--ink); border:1.5px solid var(--ink-15); border-radius:999px; padding:6px 12px; white-space:nowrap;}
+  a.product-card:hover .view{background:var(--terracotta); border-color:var(--terracotta); color:var(--cream);}
+  .row-label{font-family:"Playfair Display",serif; font-size:1.3rem; margin:0 0 18px;}
+  .row-label + .product-grid{margin-bottom:44px;}
   @media (max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:520px){.product-grid{grid-template-columns:1fr;}}
 
@@ -294,10 +327,10 @@
   @media (max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
   .blog-card{text-decoration:none; color:var(--ink); display:block;}
   .blog-card .thumb{
-    height:150px; border-radius:4px; margin-bottom:16px;
-    display:flex; align-items:center; justify-content:center;
-    font-family:"Playfair Display",serif; font-style:italic; font-size:1.1rem; text-align:center; padding:20px;
+    aspect-ratio:5/4; border-radius:4px; margin-bottom:16px; overflow:hidden; background:var(--blush);
   }
+  .blog-card .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .35s ease;}
+  .blog-card:hover .thumb img{transform:scale(1.04);}
   .blog-card h4{font-size:1.05rem; margin-bottom:8px; line-height:1.3;}
   .blog-card p{font-size:.85rem; opacity:.75; margin:0;}
   @media (max-width:760px){.blog-grid{grid-template-columns:1fr;}}
@@ -305,11 +338,28 @@
   /* ============ EMAIL CAPTURE ============ */
   .capture{
     background:var(--terracotta); color:var(--cream);
-    padding:64px 0; text-align:center;
+    padding:64px 0;
   }
+  .capture-inner{display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:center; max-width:860px; margin:0 auto;}
+  .capture-preview{height:auto; width:100%; background:var(--cream); padding:8px; border-radius:4px; transform:rotate(-3deg); box-shadow:0 14px 30px rgba(0,0,0,.18);}
   .capture h2{color:var(--cream); font-size:1.9rem; margin-bottom:14px;}
-  .capture p{opacity:.92; max-width:480px; margin:0 auto 28px;}
-  .capture small{display:block; margin-top:16px; opacity:.8; font-size:.78rem;}
+  .capture p{opacity:.95; margin:0 0 14px;}
+  .capture ul{margin:0 0 24px; padding-left:20px; opacity:.95;}
+  .capture li{margin-bottom:4px;}
+  .capture small{display:block; margin-top:16px; opacity:.85; font-size:.78rem;}
+  .mc-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .mc-form input[type=email], .mc-form input[type=text]{
+    flex:1 1 180px; padding:13px 18px; border-radius:999px; border:none;
+    font-family:"Poppins",sans-serif; font-size:.95rem; color:var(--ink);
+  }
+  .mc-form button{border:none; cursor:pointer;}
+  .mc-hp{position:absolute; left:-5000px;}
+  .mc-form[hidden], .mc-fallback[hidden]{display:none !important;}
+  @media (max-width:700px){
+    .capture-inner{grid-template-columns:1fr; text-align:center; gap:30px;}
+    .capture-preview{max-width:170px; margin:0 auto;}
+    .capture ul{text-align:left; display:inline-block;}
+  }
 
   /* ============ FOOTER ============ */
   footer{padding:50px 0 34px;}
@@ -357,6 +407,9 @@
 <img class="hero-banner" src="assets/img/shop-banner-big.png" alt="Confetti & Co. Paper Shop — printable joy for every celebration">
 
 <div class="hero-cta">
+  <!-- SEASONAL: update this pill when the season changes (see README) -->
+  <a class="season-note" href="#featured">New for the holidays: Christmas &amp; New Year's Eve murder mysteries &darr;</a>
+  <h1>Printable party games &amp; murder mystery dinner parties</h1>
   <p>Fillable, printable party games and murder mystery dinner parties you download in seconds, personalize on your screen, and print at home. No design software. No login. No waiting on the mail.</p>
   <div class="hero-buttons">
     <a class="btn btn-primary" href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Shop the Full Collection</a>
@@ -418,63 +471,114 @@
       <h2>Shop by occasion</h2>
       <a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">View full shop &rarr;</a>
     </div>
+    <!-- Tile photos are your own Etsy listing photos, loaded from Etsy's image server.
+         To swap one: open the listing on Etsy, right-click the main photo → Copy image address,
+         and paste it into the src="" below. -->
     <div class="occ-grid">
-      <a class="occ-card occ-1" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59374695" target="_blank" rel="noopener"><h3>Life Milestones</h3><span class="tag">Birthdays, retirement, graduation</span></a>
-      <a class="occ-card occ-2" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358516" target="_blank" rel="noopener"><h3>Wedding &amp; Romance</h3><span class="tag">Bridal showers, bachelorette, engagement</span></a>
-      <a class="occ-card occ-3" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358532" target="_blank" rel="noopener"><h3>Baby &amp; Gender Reveal</h3><span class="tag">Showers, reveals, planning kits</span></a>
-      <a class="occ-card occ-4" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59533453" target="_blank" rel="noopener"><h3>Kids &amp; Family</h3><span class="tag">Birthdays, escape rooms, road trips</span></a>
-      <a class="occ-card occ-5" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59654133" target="_blank" rel="noopener"><h3>Party Games Bundles</h3><span class="tag">Holidays, tailgates, office parties</span></a>
-      <a class="occ-card occ-6" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59637996" target="_blank" rel="noopener"><h3>Escape Room &amp; Murder Mystery</h3><span class="tag">Immersive dinner-party whodunits</span></a>
+      <a class="occ-card occ-1" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59374695" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/ad1970/8303490171/il_570xN.8303490171_1uhe.jpg" alt="Milestone birthday party games printable" loading="lazy"><h3>Life Milestones</h3><span class="tag">Birthdays, retirement, graduation</span></a>
+      <a class="occ-card occ-2" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358516" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/b95f3e/8327614614/il_570xN.8327614614_db8a.jpg" alt="Boho bridal shower games printable bundle" loading="lazy"><h3>Wedding &amp; Romance</h3><span class="tag">Bridal showers, bachelorette, engagement</span></a>
+      <a class="occ-card occ-3" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358532" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/d713d8/8453428796/il_570xN.8453428796_65r0.jpg" alt="Gender reveal party planning kit printable" loading="lazy"><h3>Baby &amp; Gender Reveal</h3><span class="tag">Showers, reveals, planning kits</span></a>
+      <a class="occ-card occ-4" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59533453" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/ed34f9/8458512018/il_570xN.8458512018_lbpz.jpg" alt="Kids birthday printable escape room" loading="lazy"><h3>Kids &amp; Family</h3><span class="tag">Birthdays, escape rooms, road trips</span></a>
+      <a class="occ-card occ-5" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59654133" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/9325f8/8452181516/il_570xN.8452181516_e8pp.jpg" alt="Printable party games bundle for any occasion" loading="lazy"><h3>Party Games Bundles</h3><span class="tag">Holidays, tailgates, office parties</span></a>
+      <a class="occ-card occ-6" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59637996" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/04060a/8742850743/il_570xN.8742850743_kvcv.jpg" alt="Christmas murder mystery dinner party printable" loading="lazy"><h3>Escape Room &amp; Murder Mystery</h3><span class="tag">Immersive dinner-party whodunits</span></a>
     </div>
   </div>
 </section>
 
 <!-- ============ FEATURED PRODUCTS ============ -->
+<!-- SEASONAL: swap the flagship + first row each season (see README for the calendar) -->
 <section class="featured" id="featured">
   <div class="wrap">
     <div class="section-head">
-      <h2>Fan favorites right now</h2>
+      <h2>Holiday hosting, sorted</h2>
+      <a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">See all 60+ printables &rarr;</a>
     </div>
 
-    <!-- Flagship: XOXO, You're Dead — live listing with real Pinterest traction -->
+    <!-- Flagship: Murder at Holly Manor (Christmas). Swap to XOXO, You're Dead in January. -->
     <div class="flagship">
-      <div class="flagship-art">
-        <span class="badge">Shop favorite</span>
-        <p class="script">A Valentine's Day whodunit</p>
-        <h3>XOXO, You're Dead</h3>
-        <p style="opacity:.85; margin:0;">10 character dossiers &middot; 9 evidence cards &middot; full host solution</p>
-      </div>
+      <a class="flagship-art" href="https://confetticopapershop.etsy.com/listing/4556608887/murder-at-holly-manor-christmas-murder" target="_blank" rel="noopener" style="text-decoration:none;">
+        <img src="https://i.etsystatic.com/66786483/r/il/04060a/8742850743/il_794xN.8742850743_kvcv.jpg" alt="Murder at Holly Manor Christmas murder mystery dinner party printable kit" loading="lazy">
+        <span class="badge">New for Christmas</span>
+      </a>
       <div class="flagship-copy">
-        <p>Legendary matchmaker Valentina Fontaine is poisoned at her own gala — moments before she can reveal one final secret. A complete 10-player murder mystery dinner party, fillable start to finish: assignment sheet, name tags, evidence, case notes, and a confession monologue for the host.</p>
+        <p class="script" style="font-size:1.5rem; color:var(--terracotta); margin:0 0 4px; opacity:1;">A Christmas Eve whodunit</p>
+        <h3 style="font-size:1.9rem; margin-bottom:14px;">Murder at Holly Manor</h3>
+        <p>Solve a Christmas Eve murder before dessert is served. Everyone at the table gets a character, a motive, and a secret, and nine evidence cards reveal the truth across three rounds. Fillable start to finish: assignment sheet, name tags, case notes, a final verdict ballot, and a confession monologue for the host.</p>
+        <p style="font-size:.9rem; margin-top:-6px;">For 10 players (adaptable 8&ndash;12) &middot; Ages 16+ &middot; Instant download</p>
         <div class="price">$22.00</div>
-        <a class="btn btn-primary" href="https://confetticopapershop.etsy.com/listing/4558658834/valentines-day-murder-mystery-dinner" target="_blank" rel="noopener" style="width:fit-content;">Get the Mystery</a>
+        <a class="btn btn-primary" href="https://confetticopapershop.etsy.com/listing/4556608887/murder-at-holly-manor-christmas-murder" target="_blank" rel="noopener" style="width:fit-content;">Get the Mystery on Etsy</a>
       </div>
     </div>
 
+    <h3 class="row-label">More for the holidays</h3>
     <div class="product-grid">
-      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4556052701/operation-birthday-rescue-printable" target="_blank" rel="noopener">
-        <div class="dot" style="background:var(--sage);"></div>
-        <h4>Operation Birthday Rescue</h4>
-        <p>A printable escape room for kids' birthdays, personalized with the birthday star's name.</p>
-        <div class="price">$17.00</div>
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4556898896/uncorked-new-years-eve-whodunit-dinner" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/a72d1f/8742854065/il_570xN.8742854065_25t8.jpg" alt="New Year's Eve murder mystery dinner party printable" loading="lazy"></div>
+        <div class="body">
+          <h4>Uncorked: A New Year's Eve Whodunit</h4>
+          <p>A murder in the family wine cellar, minutes before midnight. Fillable kit for 10 guests.</p>
+          <div class="meta"><span class="price">$22.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
       </a>
-      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4550639750/gender-reveal-party-planning-reveal" target="_blank" rel="noopener">
-        <div class="dot" style="background:var(--dusty);"></div>
-        <h4>Gender Reveal Planning Kit</h4>
-        <p>9 fillable pages to plan the whole event, from guest list to reveal moment.</p>
-        <div class="price">$15.00</div>
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4542994872/christmas-escape-room-kit-3-8-players" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/706193/8695022844/il_570xN.8695022844_83yr.jpg" alt="Christmas printable escape room kit for families" loading="lazy"></div>
+        <div class="body">
+          <h4>Christmas Escape Room Kit</h4>
+          <p>Help Mrs. Claus crack the safe before the sleigh leaves. 4 puzzles, 3–8 players, ages 10+.</p>
+          <div class="meta"><span class="price">$16.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
+      </a>
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4537384171/friendsgiving-party-games-bundle-trivia" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/217826/8296494845/il_570xN.8296494845_n7eq.jpg" alt="Friendsgiving party games printable bundle" loading="lazy"></div>
+        <div class="body">
+          <h4>Friendsgiving Party Games Bundle</h4>
+          <p>Trivia and table games to keep the conversation going between courses.</p>
+          <div class="meta"><span class="price">$5.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
       </a>
       <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4537411732/ultimate-party-games-bundle-editable-pdf" target="_blank" rel="noopener">
-        <div class="dot" style="background:var(--marigold);"></div>
-        <h4>Ultimate Party Games Bundle</h4>
-        <p>Trivia, would-you-rather, and charades for absolutely any occasion.</p>
-        <div class="price">$5.00</div>
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/9325f8/8452181516/il_570xN.8452181516_e8pp.jpg" alt="Ultimate printable party games bundle" loading="lazy"></div>
+        <div class="body">
+          <h4>Ultimate Party Games Bundle</h4>
+          <p>Trivia, would-you-rather, and charades for any holiday get-together.</p>
+          <div class="meta"><span class="price">$5.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
+      </a>
+    </div>
+
+    <h3 class="row-label">Hosting all year</h3>
+    <div class="product-grid">
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4558658834/valentines-day-murder-mystery-dinner" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/2353ff/8458500902/il_570xN.8458500902_aiba.jpg" alt="Valentine's Day murder mystery dinner party printable" loading="lazy"></div>
+        <div class="body">
+          <h4>XOXO, You're Dead</h4>
+          <p>A Valentine's gala whodunit for 10 players: dossiers, evidence, and a full host solution.</p>
+          <div class="meta"><span class="price">$22.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
+      </a>
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4556052701/operation-birthday-rescue-printable" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/ed34f9/8458512018/il_570xN.8458512018_lbpz.jpg" alt="Kids birthday printable escape room" loading="lazy"></div>
+        <div class="body">
+          <h4>Operation Birthday Rescue</h4>
+          <p>A printable escape room for kids' birthdays, personalized with the birthday star's name.</p>
+          <div class="meta"><span class="price">$17.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
+      </a>
+      <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4550639750/gender-reveal-party-planning-reveal" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/d713d8/8453428796/il_570xN.8453428796_65r0.jpg" alt="Gender reveal party planning kit printable" loading="lazy"></div>
+        <div class="body">
+          <h4>Gender Reveal Planning Kit</h4>
+          <p>9 fillable pages to plan the whole event, from guest list to reveal moment.</p>
+          <div class="meta"><span class="price">$15.00</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
       </a>
       <a class="product-card" href="https://confetticopapershop.etsy.com/listing/4531622095/bridal-shower-games-bundle-20-printable" target="_blank" rel="noopener">
-        <div class="dot" style="background:var(--blush);"></div>
-        <h4>Bridal Shower Games Bundle</h4>
-        <p>20 printable boho-styled games your bridal party will actually enjoy.</p>
-        <div class="price">$10.99</div>
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/b95f3e/8327614614/il_570xN.8327614614_db8a.jpg" alt="Boho bridal shower games printable bundle" loading="lazy"></div>
+        <div class="body">
+          <h4>Bridal Shower Games Bundle</h4>
+          <p>20 printable boho-styled games your bridal party will actually enjoy.</p>
+          <div class="meta"><span class="price">$10.99</span><span class="view">View on Etsy &rarr;</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -487,27 +591,28 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Party ideas &amp; how-tos</h2>
+      <a href="blog/">All party ideas &rarr;</a>
     </div>
     <div class="blog-grid">
+      <a class="blog-card" href="blog/christmas-murder-mystery-dinner-party.html">
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/04060a/8742850743/il_570xN.8742850743_kvcv.jpg" alt="Christmas murder mystery dinner party" loading="lazy"></div>
+        <h4>How to Host a Christmas Murder Mystery Dinner Party</h4>
+        <p>A Christmas Eve whodunit, planned week by week, from invites to the final verdict.</p>
+      </a>
       <a class="blog-card" href="blog/host-a-murder-mystery-party.html">
-        <div class="thumb" style="background:var(--ink); color:var(--cream);">"XOXO, You're Dead"</div>
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/2353ff/8458500902/il_570xN.8458500902_aiba.jpg" alt="Murder mystery dinner party at home" loading="lazy"></div>
         <h4>How to Host a Murder Mystery Dinner Party at Home</h4>
         <p>Everything from casting guests to pulling off the reveal.</p>
       </a>
       <a class="blog-card" href="blog/baby-shower-games-people-actually-want-to-play.html">
-        <div class="thumb" style="background:var(--dusty); color:var(--cream);">Baby Shower</div>
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/b438d1/8458520798/il_570xN.8458520798_au9i.jpg" alt="Printable baby shower games" loading="lazy"></div>
         <h4>5 Baby Shower Games People Actually Want to Play</h4>
-        <p>Skip the awkward icebreakers — these keep the room laughing.</p>
+        <p>Skip the awkward icebreakers. These keep the room laughing.</p>
       </a>
       <a class="blog-card" href="blog/backyard-escape-room-kids-birthday.html">
-        <div class="thumb" style="background:var(--sage); color:var(--cream);">Kids' Birthday</div>
+        <div class="thumb"><img src="https://i.etsystatic.com/66786483/r/il/ed34f9/8458512018/il_570xN.8458512018_lbpz.jpg" alt="Backyard escape room for a kid's birthday" loading="lazy"></div>
         <h4>Planning a Backyard Escape Room for a Kid's Birthday</h4>
         <p>Turn a birthday party into a mystery the whole group solves together.</p>
-      </a>
-      <a class="blog-card" href="blog/halloween-murder-mystery-dinner-party.html">
-        <div class="thumb" style="background:var(--terracotta); color:var(--cream);">"Haunted Hollow"</div>
-        <h4>How to Throw a Halloween Murder Mystery Dinner Party</h4>
-        <p>Costumes, casting, and pacing the evidence for a spooky-season whodunit.</p>
       </a>
     </div>
   </div>
@@ -542,11 +647,26 @@
 
 <!-- ============ EMAIL CAPTURE ============ -->
 <section class="capture" id="subscribe">
-  <div class="wrap">
-    <h2>Get a free printable game</h2>
-    <p>Join the list for a free game on us, plus first access to new murder mysteries and seasonal bundles.</p>
-    <a class="btn btn-capture" href="https://mailchi.mp/07ba28988662/confetti-co-paper-shop" target="_blank" rel="noopener">Get My Free Printable</a>
-    <small style="display:block; margin-top:16px; opacity:.8; font-size:.78rem;">No spam — just party ideas, a few times a month.</small>
+  <div class="wrap capture-inner">
+    <img class="capture-preview" src="assets/img/starter-kit-preview.jpg" alt="Preview of the free Confetti &amp; Co. Starter Kit printable" loading="lazy" width="510" height="660">
+    <div>
+      <h2>Get a free printable game</h2>
+      <p>Join the list and get the <strong>Confetti &amp; Co. Starter Kit</strong> free:</p>
+      <ul>
+        <li>A 5-page fillable PDF: a party persona generator, a warm-up puzzle, and a party-day checklist</li>
+        <li><strong>10% off your first order</strong> in the shop</li>
+        <li>First look at new murder mysteries and seasonal bundles</li>
+      </ul>
+      <!-- Inline signup: appears automatically once MAILCHIMP_FORM_ACTION is set in assets/js/site.js -->
+      <form class="mc-form" method="post" target="_blank" hidden>
+        <input type="text" name="FNAME" placeholder="First name" aria-label="First name">
+        <input type="email" name="EMAIL" placeholder="Email address" aria-label="Email address" required>
+        <div class="mc-hp" aria-hidden="true"><input type="text" name="b_77f782edab069ecd170712824_86839ef3bf" tabindex="-1" value=""></div>
+        <button class="btn btn-capture" type="submit">Send My Free Printable</button>
+      </form>
+      <a class="btn btn-capture mc-fallback" href="https://mailchi.mp/07ba28988662/confetti-co-paper-shop" target="_blank" rel="noopener">Get My Free Printable</a>
+      <small>No spam, just party ideas a few times a month. Unsubscribe anytime. <a href="privacy.html" style="color:inherit;">Privacy policy</a></small>
+    </div>
   </div>
 </section>
 
@@ -565,15 +685,32 @@
         <div>
           <h5>Shop</h5>
           <ul>
+            <li><a href="#featured">Holiday Picks</a></li>
             <li><a href="#occasions">By Occasion</a></li>
             <li><a href="https://confetticopapershop.etsy.com" target="_blank" rel="noopener">Full Etsy Shop</a></li>
           </ul>
         </div>
         <div>
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog/">Party Ideas</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#about">About the Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Help</h5>
+          <ul>
+            <li><a href="https://www.etsy.com/shop/ConfettiCoPaperShop#about" target="_blank" rel="noopener">Contact Me on Etsy</a></li>
+            <li><a href="https://www.etsy.com/shop/ConfettiCoPaperShop#policies" target="_blank" rel="noopener">Shop Policies</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
           <h5>Follow</h5>
           <ul>
-            <!-- REPLACE with your real profile URLs -->
-            <li><a href="https://pin.it/7urGrjDf2" target="_blank" rel="noopener">Pinterest</a></li>
+            <li><a href="https://www.pinterest.com/confetticopapershop/" target="_blank" rel="noopener">Pinterest</a></li>
+            <li><a href="#subscribe">Email List</a></li>
           </ul>
         </div>
       </div>
@@ -585,13 +722,6 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-</script>
 
 </body>
 </html>

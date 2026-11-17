@@ -1,4 +1,66 @@
 # Confetti & Co. — Website Mockup
+
+## ⭐ November 2026 update: what changed and what still needs you
+
+### Analytics and email signup — ✅ connected
+- **Google tag** (Tag Manager container `GTM-5VGX4RQX`, which sends to GA4
+  `G-88L5MNETH3`) is pasted right after `<head>` on every page, including all
+  blog posts, the privacy page, and the download page. Any new page you add
+  needs the same snippet in the same spot.
+- **Click tracking:** `assets/js/site.js` sends `etsy_click`, `signup_click`,
+  and `sign_up` events through that Google tag, with a `site_section` value
+  (`featured`, `occasions`, `blog-cta`, `blog-related`, …). It deliberately
+  does not load GA4 a second time, because the container already records page
+  views. Find the events in GA4 under Reports → Engagement → Events. To see
+  `site_section` in reports, register it once in GA4: Admin → Custom
+  definitions → Create custom dimension → Event scope → parameter
+  `site_section`.
+- **Mailchimp:** the embedded-form address is set in `assets/js/site.js`
+  (`MAILCHIMP_FORM_ACTION`), so the homepage and every blog post show an inline
+  first-name + email form. New subscribers land in the same audience as your
+  landing page.
+
+### What changed
+- **Homepage:** product photos on all occasion tiles, product cards, and blog
+  cards (loaded from your Etsy listings); visible H1; shorter meta
+  description; "Fan favorites" / "Shop favorite" replaced with honest labels;
+  Christmas flagship (Murder at Holly Manor) plus a holiday row and a
+  year-round row; "View on Etsy" on every product; signup section with a
+  Starter Kit preview and the WELCOME10 offer; bigger footer.
+- **Blog:** all four posts expanded (tips, timelines, FAQs), plus a new
+  Christmas murder mystery guide and a blog index at `/blog/`. Every post now
+  has a hero photo, a product callout, an email signup, related products, and
+  BlogPosting structured data for Google.
+- **New pages:** `privacy.html` and `blog/index.html`, both in `sitemap.xml`.
+- **Click tracking, signup form, and menu code** live in `assets/js/site.js`, shared by every page.
+
+### Seasonal swap calendar (homepage)
+Search `index.html` for `SEASONAL` to find the three spots to change: the
+pill above the H1, the flagship, and the "More for the holidays" row.
+
+| When | Flagship | Pill / row theme |
+|---|---|---|
+| Mid-Nov to Dec 25 | Murder at Holly Manor | Christmas + New Year's |
+| Dec 26 to Jan 1 | Uncorked (New Year's Eve) | New Year's Eve |
+| January to Feb 14 | XOXO, You're Dead | Valentine's / Galentine's |
+| Spring | Bridal or Baby Shower bundles | Showers & graduation |
+| September to Oct 31 | Haunted Hollow | Halloween |
+
+Also re-submit `sitemap.xml` in Google Search Console after uploading so
+Google picks up the new pages.
+
+### Product photos
+Photos load straight from Etsy's image server (your own listing photos), so
+nothing needs to be uploaded. To change one: open the listing on Etsy,
+right-click the main photo → **Copy image address**, and paste it into that
+card's `src="..."`. If you ever delete a listing, swap its card too.
+
+### Once you have reviews
+Add a short reviews strip under the hero with 3–5 real Etsy review quotes and
+your star rating, and change "New for Christmas" to "Bestseller" only once
+it's true.
+
+---
   
 This is a static (no-database, no-server-code) marketing site built from your
 real brand kit: exact colors, Playfair Display/Sacramento/Poppins fonts, your
@@ -55,7 +117,7 @@ Still needed:
   written (murder mystery hosting, baby shower games, backyard escape room
   for a kid's birthday), each with a CTA to a real product, and all three
   are listed in `sitemap.xml` so search engines can find them.
-- **Pinterest** — footer link points to `https://pin.it/7urGrjDf2`.
+- **Pinterest** — footer link points to `https://www.pinterest.com/confetticopapershop/`.
 - **Email signup** — the "Get a free printable game" button now links out to
   your Mailchimp Landing Page (`mailchi.mp/07ba28988662/confetti-co-paper-shop`),
   which hosts the actual signup form. This replaced the embedded form that
@@ -155,7 +217,7 @@ page collects signups but nothing sends automatically until that automation
 exists.
 
 ### 7. Pinterest — ✅ linked
-Your Pinterest profile (`pin.it/7urGrjDf2`) is already linked in the footer.
+Your Pinterest profile (`pinterest.com/confetticopapershop`) is already linked in the footer.
 Once the site is live, you can also start sending some pin traffic to blog
 posts here instead of straight to Etsy — the post can then link onward to
 the Etsy listing. That gives you a page you fully control for SEO, while
