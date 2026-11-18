@@ -16,9 +16,15 @@
   definitions → Create custom dimension → Event scope → parameter
   `site_section`.
 - **Mailchimp:** the embedded-form address is set in `assets/js/site.js`
-  (`MAILCHIMP_FORM_ACTION`), so the homepage and every blog post show an inline
-  first-name + email form. New subscribers land in the same audience as your
-  landing page.
+  (`MAILCHIMP_FORM_ACTION`). The homepage and blog forms sign people up in the
+  background and send them straight to `/download/` (Starter Kit + WELCOME10),
+  so visitors never see Mailchimp's own pages. If Mailchimp is slow to answer,
+  the form falls back to a normal Mailchimp submit in a new tab.
+  In Mailchimp itself, two settings matter for people who sign up through the
+  hosted landing page and for the email: (1) on the hosted form's confirmation
+  thank-you page, redirect to `https://confettiandcopapershop.com/download/`;
+  (2) turn on a welcome email (final welcome email or a welcome automation)
+  that links to the same page.
 
 ### What changed
 - **Homepage:** product photos on all occasion tiles, product cards, and blog

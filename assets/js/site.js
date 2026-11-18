@@ -42,16 +42,58 @@ var MAILCHIMP_FORM_ACTION = "https://mozmail.us1.list-manage.com/subscribe/post?
     });
   });
 
-  /* ---------- Inline Mailchimp signup (only once the action URL is set) ---------- */
+  /* ---------- Inline Mailchimp signup ----------
+     Submits in the background (Mailchimp's post-json endpoint), so visitors
+     never see Mailchimp's own pages. On success they go straight to
+     /download/ (Starter Kit + WELCOME10 code). If Mailchimp doesn't answer
+     within 7 seconds, the form falls back to a normal submit in a new tab. */
+  var THANK_YOU_URL = "/download/";
+  function setMsg(f, text, ok) {
+    var m = f.querySelector(".mc-msg");
+    if (!m) { m = document.createElement("p"); m.className = "mc-msg"; m.setAttribute("role", "status"); f.appendChild(m); }
+    m.textContent = text;
+    m.style.cssText = "flex-basis:100%; margin:6px 0 0; font-size:.9rem; font-weight:600;" + (ok ? "" : "color:#3E3A34; background:#FBF4E9; padding:8px 12px; border-radius:6px;");
+  }
+  function jsonpSubmit(f) {
+    var btn = f.querySelector("button[type=submit]");
+    var cb = "mcCb" + Date.now();
+    var params = new URLSearchParams(new FormData(f));
+    params.set("c", cb);
+    var url = MAILCHIMP_FORM_ACTION.replace("/subscribe/post?", "/subscribe/post-json?") + "&" + params.toString();
+    var done = false, script = document.createElement("script");
+    function cleanup() { try { delete window[cb]; } catch (e) { window[cb] = undefined; } script.remove(); if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; } }
+    function fallback() { if (done) return; done = true; cleanup(); f.target = "_blank"; HTMLFormElement.prototype.submit.call(f); }
+    if (btn) { btn.dataset.label = btn.dataset.label || btn.textContent; btn.disabled = true; btn.textContent = "Sending\u2026"; }
+    window[cb] = function (resp) {
+      if (done) return; done = true; cleanup();
+      var msg = (resp && resp.msg ? String(resp.msg) : "").replace(/<[^>]+>/g, "").replace(/^\d+ - /, "");
+      if (resp && resp.result === "success") {
+        if (window.gtag) gtag("event", "sign_up", { method: "mailchimp_inline", site_section: sectionOf(f) });
+        setMsg(f, "You're on the list! Taking you to your free printable\u2026", true);
+        setTimeout(function () { location.href = THANK_YOU_URL; }, 900);
+      } else if (/already subscribed/i.test(msg)) {
+        setMsg(f, "You're already on the list. Here's your free printable\u2026", true);
+        setTimeout(function () { location.href = THANK_YOU_URL; }, 1200);
+      } else {
+        setMsg(f, msg || "Something went wrong. Please check your email address and try again.", false);
+      }
+    };
+    script.onerror = fallback;
+    setTimeout(fallback, 7000);
+    script.src = url;
+    document.body.appendChild(script);
+  }
   document.addEventListener("DOMContentLoaded", function () {
     var forms = document.querySelectorAll("form.mc-form");
     var fallbacks = document.querySelectorAll(".mc-fallback");
     if (!MAILCHIMP_FORM_ACTION) return; // keep the button version
     forms.forEach(function (f) {
       f.action = MAILCHIMP_FORM_ACTION;
+      f.removeAttribute("target");
       f.hidden = false;
-      f.addEventListener("submit", function () {
-        if (window.gtag) gtag("event", "sign_up", { method: "mailchimp_inline", site_section: sectionOf(f) });
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        jsonpSubmit(f);
       });
     });
     fallbacks.forEach(function (b) { b.hidden = true; });

@@ -225,45 +225,42 @@
   .occ-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    grid-auto-rows:170px;
     gap:18px;
   }
+  /* photo on top, caption strip below in dark ink so it reads on any photo */
   .occ-card{
-    position:relative;
-    border-radius:4px;
-    padding:20px;
-    display:flex; flex-direction:column; justify-content:flex-end;
+    display:flex; flex-direction:column;
     text-decoration:none;
-    color:var(--cream);
-    overflow:hidden;
+    color:var(--ink);
+    background:#fff;
     border:1px solid var(--ink-15);
+    border-bottom:4px solid var(--accent, var(--terracotta));
+    border-radius:4px;
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
   }
-  .occ-card h3{font-size:1.15rem; color:inherit; font-weight:600; line-height:1.15;}
-  .occ-card span.tag{font-size:.78rem; opacity:.9; display:block; margin-top:4px;}
-  /* product photo fills the tile; color stays underneath as a fallback */
-  .occ-card img{
-    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-    transition:transform .35s ease;
-  }
-  .occ-card:hover img{transform:scale(1.04);}
-  .occ-card::after{
-    content:"";
-    position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(30,26,22,.86));
-  }
-  .occ-card h3, .occ-card span.tag{position:relative; z-index:1; color:var(--cream);}
-  .occ-card span.tag::after{content:" →"; opacity:.9;}
+  .occ-card:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.08);}
+  .occ-card .photo{aspect-ratio:16/10; overflow:hidden; background:var(--accent, var(--blush));}
+  .occ-card .photo img{width:100%; height:100%; object-fit:cover; object-position:center 20%; transition:transform .35s ease;}
+  .occ-card:hover .photo img{transform:scale(1.04);}
+  .occ-card .caption{padding:14px 18px 16px;}
+  .occ-card h3{font-size:1.15rem; color:var(--ink); font-weight:600; line-height:1.2; margin:0;}
+  .occ-card span.tag{font-size:.8rem; color:var(--ink); opacity:.75; display:block; margin-top:4px;}
+  .occ-card span.tag::after{content:" \2192"; color:var(--terracotta); opacity:1;}
+  .occ-card:hover h3{color:var(--terracotta);}
 
-  .occ-1{background:var(--marigold);}
-  .occ-2{background:var(--blush);}
-  .occ-3{background:var(--dusty);}
-  .occ-4{background:var(--sage);}
-  .occ-5{background:var(--terracotta);}
-  .occ-6{background:var(--ink);}
+  .occ-1{--accent:var(--marigold);}
+  .occ-2{--accent:var(--blush);}
+  .occ-3{--accent:var(--dusty);}
+  .occ-4{--accent:var(--sage);}
+  .occ-5{--accent:var(--terracotta);}
+  .occ-6{--accent:var(--ink);}
 
   @media (max-width:900px){
-    .occ-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;}
-    .occ-card{min-height:150px;}
+    .occ-grid{grid-template-columns:repeat(2,1fr); gap:14px;}
+    .occ-card .caption{padding:12px 14px 14px;}
+    .occ-card h3{font-size:1.02rem;}
+    .occ-card span.tag{font-size:.76rem;}
   }
 
   /* ============ FEATURED PRODUCTS ============ */
@@ -475,12 +472,12 @@
          To swap one: open the listing on Etsy, right-click the main photo → Copy image address,
          and paste it into the src="" below. -->
     <div class="occ-grid">
-      <a class="occ-card occ-1" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59374695" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/ad1970/8303490171/il_570xN.8303490171_1uhe.jpg" alt="Milestone birthday party games printable" loading="lazy"><h3>Life Milestones</h3><span class="tag">Birthdays, retirement, graduation</span></a>
-      <a class="occ-card occ-2" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358516" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/b95f3e/8327614614/il_570xN.8327614614_db8a.jpg" alt="Boho bridal shower games printable bundle" loading="lazy"><h3>Wedding &amp; Romance</h3><span class="tag">Bridal showers, bachelorette, engagement</span></a>
-      <a class="occ-card occ-3" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358532" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/d713d8/8453428796/il_570xN.8453428796_65r0.jpg" alt="Gender reveal party planning kit printable" loading="lazy"><h3>Baby &amp; Gender Reveal</h3><span class="tag">Showers, reveals, planning kits</span></a>
-      <a class="occ-card occ-4" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59533453" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/ed34f9/8458512018/il_570xN.8458512018_lbpz.jpg" alt="Kids birthday printable escape room" loading="lazy"><h3>Kids &amp; Family</h3><span class="tag">Birthdays, escape rooms, road trips</span></a>
-      <a class="occ-card occ-5" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59654133" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/9325f8/8452181516/il_570xN.8452181516_e8pp.jpg" alt="Printable party games bundle for any occasion" loading="lazy"><h3>Party Games Bundles</h3><span class="tag">Holidays, tailgates, office parties</span></a>
-      <a class="occ-card occ-6" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59637996" target="_blank" rel="noopener"><img src="https://i.etsystatic.com/66786483/r/il/04060a/8742850743/il_570xN.8742850743_kvcv.jpg" alt="Christmas murder mystery dinner party printable" loading="lazy"><h3>Escape Room &amp; Murder Mystery</h3><span class="tag">Immersive dinner-party whodunits</span></a>
+      <a class="occ-card occ-1" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59374695" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/ad1970/8303490171/il_570xN.8303490171_1uhe.jpg" alt="Milestone birthday party games printable" loading="lazy"></div><div class="caption"><h3>Life Milestones</h3><span class="tag">Birthdays, retirement, graduation</span></div></a>
+      <a class="occ-card occ-2" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358516" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/b95f3e/8327614614/il_570xN.8327614614_db8a.jpg" alt="Boho bridal shower games printable bundle" loading="lazy"></div><div class="caption"><h3>Wedding &amp; Romance</h3><span class="tag">Bridal showers, bachelorette, engagement</span></div></a>
+      <a class="occ-card occ-3" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59358532" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/d713d8/8453428796/il_570xN.8453428796_65r0.jpg" alt="Gender reveal party planning kit printable" loading="lazy"></div><div class="caption"><h3>Baby &amp; Gender Reveal</h3><span class="tag">Showers, reveals, planning kits</span></div></a>
+      <a class="occ-card occ-4" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59533453" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/ed34f9/8458512018/il_570xN.8458512018_lbpz.jpg" alt="Kids birthday printable escape room" loading="lazy"></div><div class="caption"><h3>Kids &amp; Family</h3><span class="tag">Birthdays, escape rooms, road trips</span></div></a>
+      <a class="occ-card occ-5" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59654133" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/9325f8/8452181516/il_570xN.8452181516_e8pp.jpg" alt="Printable party games bundle for any occasion" loading="lazy"></div><div class="caption"><h3>Party Games Bundles</h3><span class="tag">Holidays, tailgates, office parties</span></div></a>
+      <a class="occ-card occ-6" href="https://www.etsy.com/shop/ConfettiCoPaperShop?etsrc=sdt&section_id=59637996" target="_blank" rel="noopener"><div class="photo"><img src="https://i.etsystatic.com/66786483/r/il/04060a/8742850743/il_570xN.8742850743_kvcv.jpg" alt="Christmas murder mystery dinner party printable" loading="lazy"></div><div class="caption"><h3>Escape Room &amp; Murder Mystery</h3><span class="tag">Immersive dinner-party whodunits</span></div></a>
     </div>
   </div>
 </section>
